@@ -11,9 +11,7 @@ void testApp::setup(){
     ofBackground(0);
     ofSetVerticalSync(true);
     ofEnableSmoothing();
-    
-    int fps = 30;
-    ofSetFrameRate(fps);
+    ofSetFrameRate(50);
     
     vidGrabber.setVerbose(true);
     vidGrabber.initGrabber(camWidth, camHeight);
@@ -25,7 +23,6 @@ void testApp::setup(){
     scanner->init(scanRect, 2, 0.005f);
     
     // Setup GUI
-    bGuiVisible = true;
     bStartScan = false;
     bDrawVideo = false;
     
@@ -57,6 +54,10 @@ void testApp::draw(){
         int ch = camHeight/4;
         vidGrabber.draw(ofGetWidth()-cw - 20, 20, cw, ch);
     }
+    
+    if (gui->isVisible()) {
+        gui->draw();
+    }
 }
 
 //--------------------------------------------------------------
@@ -73,8 +74,7 @@ void testApp::keyPressed(int key){
         latency = 0;
 
     if (key == 's'){
-        bGuiVisible = !bGuiVisible;
-        gui->setVisible(bGuiVisible);
+        gui->toggleVisible();
     }}
 
 //--------------------------------------------------------------
@@ -145,8 +145,7 @@ void testApp::setupGUI(){
     gui->addWidgetDown(new ofxUIToggle(dim, dim, bDrawVideo, "SHOW VIDEO INPUT"));
     
     ofAddListener(gui->newGUIEvent, this, &testApp::guiEvent);
-    gui->loadSettings("GUI/gui_settings.xml");
-    gui->setVisible(bGuiVisible);
+    gui->loadSettings("GUI/guiSettings.xml");
 }
 
 //--------------------------------------------------------------
@@ -190,6 +189,6 @@ void testApp::exit()
     delete scanner;
     scanner = 0;
     
-	gui->saveSettings("GUI/gui_settings.xml");
+	gui->saveSettings("GUI/guiSettings.xml");
     delete gui;
 }

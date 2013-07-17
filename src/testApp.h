@@ -34,8 +34,10 @@ public:
     Scanner           * scanner;
     ofxUICanvas       * gui;
     
-    int 				threshold;
-    bool				bLearnBakground;
-    bool bGuiVisible, bStartScan, bSaveScan, bDrawVideo;
+    int  threshold;
+    
+    bool bStartScan;
+    bool bSaveScan;
+    bool bDrawVideo;
 };
 
