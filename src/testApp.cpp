@@ -137,7 +137,7 @@ void testApp::setupGUI(){
 	names.push_back("LOW");
     
     gui->addWidgetDown(new ofxUIRadio(dim, dim, "RESOLUTION", names, OFX_UI_ORIENTATION_VERTICAL));
-    gui->addWidgetDown(new ofxUISlider(length - xInit, dim, 0.005f, 1.0f, 0.005f, "SPEED"));
+    gui->addWidgetDown(new ofxUISlider(length - xInit, dim, 0.005f, 1.0f, 0.005f, "LATENCY"));
     gui->addWidgetDown(new ofxUISpacer(length - xInit, 2));
     gui->addWidgetDown(new ofxUIButton(dim, dim, bStartScan, "SCAN"));
     gui->addWidgetDown(new ofxUIToggle(dim, dim, scanner->getPaused(), "PAUSE"));
@@ -160,7 +160,7 @@ void testApp::guiEvent(ofxUIEventArgs &e)
     else if (e.widget->getName() == "LOW")
         scanner->setResolution(SO_RESOLUTION_LOW);
     
-    else if (e.widget->getName() == "SPEED")
+    else if (e.widget->getName() == "LATENCY")
     {
         ofxUISlider *slider = (ofxUISlider *) e.widget;
         scanner->setScanSpeed(slider->getScaledValue());
