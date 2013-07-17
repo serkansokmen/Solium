@@ -1,0 +1,35 @@
+<Widget>
+    <Kind>2</Kind>
+    <Name>LOSSLESS</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>HIGH</Name>
+    <Value>1</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>NORMAL</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>LOW</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>4</Kind>
+    <Name>SPEED</Name>
+    <Value>0.017756410</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>PAUSE</Name>
+    <Value>0</Value>
+</Widget>
+<Widget>
+    <Kind>2</Kind>
+    <Name>SHOW VIDEO INPUT</Name>
+    <Value>0</Value>
+</Widget>
